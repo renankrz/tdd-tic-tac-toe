@@ -48,3 +48,12 @@ test("Points winner in the main diagonal", () => {
   playMove(board, 2, 2, symbol);
   expect(isGameOver(board, symbol)).toBe(true);
 });
+
+test("Points winner in the secondary diagonal", () => {
+  let board = initBoard(3, " ");
+  const symbol = "X";
+  playMove(board, 0, 2, symbol);
+  playMove(board, 1, 1, symbol);
+  playMove(board, 2, 0, symbol);
+  expect(isGameOver(board, symbol)).toBe(true);
+});

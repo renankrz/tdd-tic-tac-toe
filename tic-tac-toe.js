@@ -4,6 +4,9 @@ const initBoard = (size, symbol) => {
   );
 };
 
+const playMove = (board, row, col, symbol) => {};
+
 module.exports = {
   initBoard,
+  playMove,
 };

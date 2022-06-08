@@ -1,5 +1,7 @@
 const initBoard = (size, symbol) => {
-  return 0;
+  return Array.from({ length: size }, () =>
+    Array.from({ length: size }, () => symbol)
+  );
 };
 
 module.exports = {

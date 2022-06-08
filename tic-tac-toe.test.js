@@ -1,4 +1,4 @@
-const { initBoard, playMove } = require("./tic-tac-toe");
+const { initBoard, playMove, isGameOver } = require("./tic-tac-toe");
 
 test("Generates a board with the correct size", () => {
   const size = 3;
@@ -13,4 +13,11 @@ test("Plays a move", () => {
   const col = 2;
   playMove(board, row, col, symbol);
   expect(board[row][col]).toContain(symbol);
+});
+
+test("Doesn't point a winner when there isn't one", () => {
+  let board = initBoard(3, "_");
+  const symbol = "X";
+  playMove(board, 0, 0, symbol);
+  expect(isGameOver(board, symbol)).toBe(false);
 });

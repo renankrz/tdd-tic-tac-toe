@@ -9,6 +9,20 @@ const playMove = (board, row, col, symbol) => {
 };
 
 const isGameOver = (board, symbol) => {
+  const rowsScore = new Array(board.length).fill(0);
+
+  for (let row = 0; row < board.length; row++) {
+    for (let col = 0; col < board.length; col++) {
+      if (board[row][col] === symbol) {
+        rowsScore[row]++;
+      }
+    }
+  }
+
+  if (rowsScore.includes(board.length)) {
+    return true;
+  }
+
   return false;
 };
 

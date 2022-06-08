@@ -30,3 +30,12 @@ test("Points winner in a row", () => {
   playMove(board, 0, 2, symbol);
   expect(isGameOver(board, symbol)).toBe(true);
 });
+
+test("Points winner in a column", () => {
+  let board = initBoard(3, "_");
+  const symbol = "X";
+  playMove(board, 0, 0, symbol);
+  playMove(board, 1, 0, symbol);
+  playMove(board, 2, 0, symbol);
+  expect(isGameOver(board, symbol)).toBe(true);
+});

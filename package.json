@@ -1,0 +1,15 @@
+{
+  "name": "tdd-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tic-tac-toe.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "renankrz",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}

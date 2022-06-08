@@ -21,3 +21,12 @@ test("Doesn't point a winner when there isn't one", () => {
   playMove(board, 0, 0, symbol);
   expect(isGameOver(board, symbol)).toBe(false);
 });
+
+test("Points winner in a row", () => {
+  let board = initBoard(3, "_");
+  const symbol = "X";
+  playMove(board, 0, 0, symbol);
+  playMove(board, 0, 1, symbol);
+  playMove(board, 0, 2, symbol);
+  expect(isGameOver(board, symbol)).toBe(true);
+});

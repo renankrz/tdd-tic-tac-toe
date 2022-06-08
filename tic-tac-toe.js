@@ -12,6 +12,7 @@ const isGameOver = (board, symbol) => {
   const rowsScore = new Array(board.length).fill(0);
   const colsScore = new Array(board.length).fill(0);
   let mainDiagonalScore = 0;
+  let secondaryDiagonalScore = 0;
 
   for (let row = 0; row < board.length; row++) {
     for (let col = 0; col < board.length; col++) {
@@ -21,6 +22,9 @@ const isGameOver = (board, symbol) => {
         if (row === col) {
           mainDiagonalScore++;
         }
+        if (col === board.length - row - 1) {
+          secondaryDiagonalScore++;
+        }
       }
     }
   }
@@ -28,7 +32,8 @@ const isGameOver = (board, symbol) => {
   if (
     rowsScore.includes(board.length) ||
     colsScore.includes(board.length) ||
-    mainDiagonalScore === board.length
+    mainDiagonalScore === board.length ||
+    secondaryDiagonalScore === board.length
   ) {
     return true;
   }

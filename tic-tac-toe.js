@@ -8,7 +8,9 @@ const playMove = (board, row, col, symbol) => {
   board[row][col] = symbol;
 };
 
-const isGameOver = (board, symbol) => {};
+const isGameOver = (board, symbol) => {
+  return false;
+};
 
 module.exports = {
   initBoard,
